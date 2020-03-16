@@ -2,13 +2,13 @@ const router = require('express').Router()
 const { authUser } = require('../utils') // Authenticated Route
 
 const {
-  getAllPayments,
-  updatePayments,
-  createPayments
+  getAllPayment,
+  updatePayment,
+  createPayment
 } = require('../controllers/payment.controller')
 
-router.get('/', authUser, getAllPayments)
-router.put('/:id', authUser, updatePayments)
-router.post('/', authUser, createPayments)
+router.get('/', authUser, getAllPayment)
+router.put('/:id', authUser, updatePayment)
+router.post('/', authUser, createPayment)
 
 module.exports = router

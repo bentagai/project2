@@ -2,15 +2,15 @@ const router = require('express').Router()
 const { authUser } = require('../utils') // Authenticated Route
 
 const {
-  getAllTenants,
-  updateTenants,
-  deleteTenants,
-  createTenants
+  getAllTenant,
+  updateTenant,
+  deleteTenant,
+  createTenant
 } = require('../controllers/tenant.controller')
 
-router.get('/', authUser, getAllTenants)
-router.put('/:id', authUser, updateTenants)
-router.delete('/:id', authUser, deleteTenants)
-router.post('/', authUser, createTenants)
+router.get('/', authUser, getAllTenant)
+router.put('/:id', authUser, updateTenant)
+router.delete('/:id', authUser, deleteTenant)
+router.post('/', authUser, createTenant)
 
 module.exports = router

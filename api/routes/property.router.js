@@ -2,15 +2,15 @@ const router = require('express').Router()
 const { authUser } = require('../utils') // Authenticated Route
 
 const {
-  getAllProperties,
-  updateProperties,
-  deleteProperties,
-  createProperties
+  getAllProperty,
+  updateProperty,
+  deleteProperty,
+  createProperty
 } = require('../controllers/property.controller')
 
-router.get('/', authUser, getAllProperties)
-router.put('/:id', authUser, updateProperties)
-router.delete('/:id', authUser, deleteProperties)
-router.post('/', authUser, createProperties)
+router.get('/', authUser, getAllProperty)
+router.put('/:id', authUser, updateProperty)
+router.delete('/:id', authUser, deleteProperty)
+router.post('/', authUser, createProperty)
 
 module.exports = router
