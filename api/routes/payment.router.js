@@ -5,7 +5,7 @@ const {
   getAllPayments,
   updatePayments,
   createPayments
-} = require('../controllers/payments.controller')
+} = require('../controllers/payment.controller')
 
 router.get('/', authUser, getAllPayments)
 router.put('/:id', authUser, updatePayments)
