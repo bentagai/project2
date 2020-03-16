@@ -17,5 +17,5 @@ const paymentSchema = new Schema({
   "amount": {type: Number, required: true}
 })
 
-const paymentSchema = mongoose.model('expenses', paymentSchema)
-module.exports = paymentSchema
+const paymentModel = mongoose.model('expenses', paymentSchema)
+module.exports = paymentModel

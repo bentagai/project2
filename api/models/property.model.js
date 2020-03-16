@@ -16,5 +16,6 @@ const propertySchema = new Schema({
   "monthlyRental": {type: Number, required: true}
 })
 
-const propertySchema = mongoose.model('property', propertySchema)
-module.exports = propertySchema
+const propertyModel = mongoose.model('property', propertySchema)
+module.exports = propertyModel
+

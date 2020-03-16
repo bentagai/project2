@@ -13,5 +13,7 @@ const tenantSchema = new Schema({
     }
 })
 
-const tenantSchema = mongoose.model('tenant', tenantSchema)
-module.exports = tenantSchema
+const tenantModel = mongoose.model('tenant', tenantSchema)
+module.exports = tenantModel
+
+

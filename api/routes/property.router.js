@@ -14,4 +14,3 @@ router.delete('/:id', authUser, deleteProperties)
 router.post('/', authUser, createProperties)
 
 module.exports = router
-
