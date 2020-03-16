@@ -5,7 +5,7 @@ const tenantSchema = new Schema({
     "name": { type: String, required: true },
     "surname": { type: String, required: true },
     "document": { type: String, required: true },
-    "beginDate": { type: Date, required: true },
+    "beginDate": { type: String, required: true },
     "property": {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'property',
@@ -15,5 +15,3 @@ const tenantSchema = new Schema({
 
 const tenantModel = mongoose.model('tenant', tenantSchema)
 module.exports = tenantModel
-
-

@@ -2,11 +2,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const propertySchema = new Schema({
 
-  "tenant": {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'tenant',
-      required: true
-    },  
   "street": {type: String, required: true},
   "letter": {type: String},
   "city": {type: String, required: true},
