@@ -13,6 +13,7 @@ const paymentSchema = new Schema({
         'insurance',
         'other']
         , required: true},
+  "reference" : {type: String},
   "date": {type: Date, required: true},
   "amount": {type: Number, required: true}
 })
