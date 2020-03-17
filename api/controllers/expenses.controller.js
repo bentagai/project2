@@ -8,14 +8,15 @@ module.exports = {
 
 function getAllExpenses (req, res) {
   ExpensesModel
-    .find({ property: res.locals.property._id })
+    .find()
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function createExpenses (req, res) {
   ExpensesModel
-    .create({ property: res.locals.property._id, task: req.body.expenses })
+    //.create({ property: res.locals.property._id, task: req.body.expenses })
+    .create(req.body)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }

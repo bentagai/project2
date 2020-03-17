@@ -9,14 +9,14 @@ module.exports = {
 
 function getAllPayment (req, res) {
   PaymentModel
-    .find({ property: res.locals.property._id })
+    .find()
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function createPayment (req, res) {
   PaymentModel
-    .create({ property: res.locals.property._id, task: req.body.payment })
+    .create(req.body)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }

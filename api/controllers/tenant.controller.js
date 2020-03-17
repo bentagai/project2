@@ -24,8 +24,7 @@ function createTenant (req, res) {
 
 function deleteTenant (req, res) {
   TenantModel
-    //.remove({ _id: req.params.id }) 
-    .remove(req.params.id)
+    .remove({ _id: req.params.id }) 
     .then(response => res.json(response))
     .catch(err => handleError(err, res))
 }
