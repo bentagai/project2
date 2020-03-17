@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 (function () {
   const api = axios.create({
-    baseURL: 'api/',
+    baseURL: 'http://localhost:3000/api/',
     timeout: 1000
   })
 
