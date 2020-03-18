@@ -6,8 +6,8 @@ const propertySchema = new Schema({
   "letter": {type: String},
   "city": {type: String, required: true},
   "postalCode": {type: Number, required: true},
-  "garage": {type: String},
-  "storageRoom": {type: String},
+  "garage": {type: String, required: false},
+  "storageRoom": {type: String, required: false},
   "monthlyRental": {type: Number, required: true}
 })
 
