@@ -35,10 +35,10 @@
         <a href="./altaInmuebles.html" class="btn btn-dark" role="button">Alta inmuebles</a>
         <a href="./consultaInmuebles.html" class="btn btn-dark" role="button">Consulta inmuebles</a>
         <a href="./altaInquilino.html" class="btn btn-dark" role="button">Alta inquilino</a>
-        <a href="./consultaInquilinos.html" class="btn btn-dark" role="button">Consulta inmuebles</a>
+        <a href="./consultaInquilinos.html" class="btn btn-dark" role="button">Consulta inquilino</a>
         <a href="./ingresos.html" class="btn btn-dark" role="button">Ingresos</a>
         <a href="./gastos.html" class="btn btn-dark" role="button">Gastos</a>
-      </nav> 
+      </nav>
     </div>
     <br>
     <form class="col-12">
@@ -54,14 +54,20 @@
         <div class="form-group">
             <input class="form-control" id="beginDate" placeholder="Fecha inicio">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <input class="form-control" id="property" placeholder="Inmueble">
+        </div> -->
+        <div class="form-group">
+          <label for="type">Select property</label>
+          <select class="form-control" id="propertyList">
+          </select>
         </div>
     </form>
+    <div>
+      <button type="button" class="btn btn-primary btn-lg" id="altaInquilino">Aceptar</button>
+    </div>    
   </div>
-  <div>
-    <button type="button" class="btn btn-primary btn-lg" id="aceptar">Aceptar</button>
-  </div>
+
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

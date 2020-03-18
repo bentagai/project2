@@ -13,4 +13,3 @@ const propertySchema = new Schema({
 
 const propertyModel = mongoose.model('property', propertySchema)
 module.exports = propertyModel
-

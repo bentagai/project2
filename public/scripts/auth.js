@@ -21,7 +21,7 @@ document.getElementById('btn-signup').addEventListener('click', (event) => {
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('name', response.data.username)
       localStorage.setItem('email', response.data.email)
-      location.assign('todos.html')
+      location.assign('home.html')
     })
     .catch(function (error) {
       console.log(error.response)

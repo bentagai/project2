@@ -16,13 +16,29 @@
       location.assign('index.html')
     })
   
-    document.getElementById('altaInmueble').addEventListener('click', (event) => {
+    api.get('property'
+    //, { headers: { token: localStorage.getItem('token') } }
+    ).then(response => {
+        response.data.forEach(property => {
+            console.log(property)
+            consultProperty(property)
+        })
+          })
+
+    function consultProperty (property) {
+        const propertyList = document.getElementById('propertyList')
+        const propertyInd = document.createElement('option')
+        propertyInd.innerHTML = `<option>${property.street}  ID: ${property._id}</option>`
+        propertyList.appendChild(propertyInd)
+    }  
+
+    document.getElementById('altaInquilino').addEventListener('click', (event) => {
         api.post('tenant',
-           {street: document.getElementById('name').value,
-           letter: document.getElementById('surname').value,
-           city: document.getElementById('document').value,
-           postalCode: document.getElementById('beginDate').value,
-           garage: document.getElementById('property').value },
+           {name: document.getElementById('name').value,
+           surname: document.getElementById('surname').value,
+           document: document.getElementById('document').value,
+           beginDate: document.getElementById('beginDate').value,
+           property: document.getElementById('property').value },
           //{ headers: { token: localStorage.getItem('token') } }
           )
           .then(function (response) {console.log("hola")
