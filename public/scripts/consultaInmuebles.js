@@ -22,17 +22,16 @@
 
     function consultProperty (property) {
         const propertyList = document.getElementById('propertyList')
-        const propertyInd = document.createElement('table')
+        const propertyInd = document.createElement('div')
         propertyInd.innerHTML = 
-        `<table>
-            <tr>Calle = ${property.street}</tr>
-            <tr>Letra = ${property.letter}</tr>    
-            <tr>Localidad = ${property.city}</tr>
-            <tr>Código Postal = ${property.postalCode}</tr>
-            <tr>Garaje = ${property.garage}</tr>
-            <tr>Trastero = ${property.storageRoom}</tr>
-            <tr>Alquiler mensual = ${property.monthlyRental}</tr>
-        </table>`
+        `   <div>Calle = ${property.street}</div>
+            <div>Letra = ${property.letter}</div>    
+            <div>Localidad = ${property.city}</div>
+            <div>Código Postal = ${property.postalCode}</div>
+            <div>Garaje = ${property.garage}</div>
+            <div>Trastero = ${property.storageRoom}</div>
+            <div>Alquiler mensual = ${property.monthlyRental}</div>
+            <button type="button" class="btn btn-primary btn-lg" id="altaInmueble">Modificar</button>`
         propertyList.appendChild(propertyInd)
     }
 
