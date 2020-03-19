@@ -10,6 +10,7 @@ module.exports = {
 function getAllPayment (req, res) {
   PaymentModel
     .find()
+    .populate('property')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
