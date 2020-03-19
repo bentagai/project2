@@ -43,7 +43,8 @@
            amount:    document.getElementById('amount').value },
           //{ headers: { token: localStorage.getItem('token') } }
           )
-          .then(function (response) {console.log("hola")
+          .then(function (response) {
+            alert("Gasto Introducido");
           })
           .catch(function (error) {
             console.log(error)

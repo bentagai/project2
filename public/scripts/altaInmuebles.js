@@ -27,7 +27,8 @@
            monthlyRental: document.getElementById('monthlyRental').value },
           //{ headers: { token: localStorage.getItem('token') } }
           )
-          .then(function (response) {console.log("hola")
+          .then(function (response) {
+            alert("Alta de Inmueble Realizada");
           })
           .catch(function (error) {
             console.log(error)
