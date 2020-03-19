@@ -48,7 +48,7 @@
     }
 
     document.getElementById('modificarInquilino').addEventListener('click', (event) => {
-        api.put(`tenant/${tenantToModify}`, { headers: { token: localStorage.getItem('token') } },
+        api.put(`tenant/${tenantToModify}`, 
             {
                 name: document.getElementById('name').value,
                 surname: document.getElementById('surname').value,
@@ -56,8 +56,9 @@
                 beginDate: document.getElementById('beginDate').value,
                 property: document.getElementById('property').value
             },
+            { headers: { token: localStorage.getItem('token') } }
         )
-            .then((response) => console.log("hola"))
+            .then((response) => alert("Modificación Realizada"))
             .catch((error) => console.log(error))
     })
 

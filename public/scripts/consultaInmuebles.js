@@ -16,7 +16,7 @@
     const propertyList = document.getElementById('propertyList')
     propertyList.innerHTML = ''
     api.get('property',
-    { headers: { token: localStorage.getItem('token') } },
+    { headers: { token: localStorage.getItem('token') } }
     ).then(response => {
       response.data.forEach(property => {
         consultProperty(property)

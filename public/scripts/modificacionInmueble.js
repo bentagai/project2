@@ -55,7 +55,7 @@
 
     document.getElementById('modificarInmueble').addEventListener('click', (event) => {
         api.put(`property/${propertyToModify}`, 
-        { headers: { token: localStorage.getItem('token') } },
+        
             {
                 street: document.getElementById('street').value,
                 letter: document.getElementById('letter').value,
@@ -65,8 +65,9 @@
                 storageRoom: document.getElementById('storageRoom').value,
                 monthlyRental: document.getElementById('monthlyRental').value
             },
+            { headers: { token: localStorage.getItem('token') } }
         )
-            .then((response) => console.log("hola"))
+            .then((response) => alert("Modificación Realizada"))
             .catch((error) => console.log(error))
     })
 
