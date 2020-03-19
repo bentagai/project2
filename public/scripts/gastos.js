@@ -36,12 +36,11 @@
 
     document.getElementById('gastos').addEventListener('click', (event) => {
         api.post('expenses',
-           {
-           property: document.getElementById('propertyList').value,    
-           type: document.getElementById('type').value,
+           {property: document.getElementById('propertyList').value,    
+           type:      document.getElementById('type').value,
            reference: document.getElementById('reference').value,
-           date: document.getElementById('date').value,
-           amount: document.getElementById('amount').value },
+           date:      document.getElementById('date').value,
+           amount:    document.getElementById('amount').value },
           //{ headers: { token: localStorage.getItem('token') } }
           )
           .then(function (response) {console.log("hola")
