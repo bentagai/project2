@@ -14,8 +14,8 @@
     const propertyToModify = localStorage.getItem('propertyID')
 
     function populateInformation() {
-        api.get('property'
-            //, { headers: { token: localStorage.getItem('token') } }
+        api.get('property',
+            { headers: { token: localStorage.getItem('token') } }
         ).then(response => {
             response.data.forEach(property => {
                 modifyProperty(property)
@@ -54,7 +54,8 @@
     }
 
     document.getElementById('modificarInmueble').addEventListener('click', (event) => {
-        api.put(`property/${propertyToModify}`,
+        api.put(`property/${propertyToModify}`, 
+        { headers: { token: localStorage.getItem('token') } },
             {
                 street: document.getElementById('street').value,
                 letter: document.getElementById('letter').value,
@@ -64,19 +65,11 @@
                 storageRoom: document.getElementById('storageRoom').value,
                 monthlyRental: document.getElementById('monthlyRental').value
             },
-            //{ headers: { token: localStorage.getItem('token') } }
         )
             .then((response) => console.log("hola"))
             .catch((error) => console.log(error))
     })
 
     populateInformation()
-
-    // api.get('todos', { headers: { token: localStorage.getItem('token') } }).then(response => {
-    //   response.data.forEach(todo => {
-    //     addTodoToList(todo.task)
-    //   })
-    // })
-
 })(
 )

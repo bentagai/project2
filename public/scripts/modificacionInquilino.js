@@ -14,8 +14,8 @@
     const tenantToModify = localStorage.getItem('tenantID')
 
     function populateInformation() {
-        api.get('tenant'
-            //, { headers: { token: localStorage.getItem('token') } }
+        api.get('tenant',
+            { headers: { token: localStorage.getItem('token') } }
         ).then(response => {
             response.data.forEach(tenant => {
                 modifyTenant(tenant)
@@ -48,7 +48,7 @@
     }
 
     document.getElementById('modificarInquilino').addEventListener('click', (event) => {
-        api.put(`tenant/${tenantToModify}`,
+        api.put(`tenant/${tenantToModify}`, { headers: { token: localStorage.getItem('token') } },
             {
                 name: document.getElementById('name').value,
                 surname: document.getElementById('surname').value,
@@ -56,19 +56,12 @@
                 beginDate: document.getElementById('beginDate').value,
                 property: document.getElementById('property').value
             },
-            //{ headers: { token: localStorage.getItem('token') } }
         )
             .then((response) => console.log("hola"))
             .catch((error) => console.log(error))
     })
 
     populateInformation()
-
-    // api.get('todos', { headers: { token: localStorage.getItem('token') } }).then(response => {
-    //   response.data.forEach(todo => {
-    //     addTodoToList(todo.task)
-    //   })
-    // })
 
 })(
 )

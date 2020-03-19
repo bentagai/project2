@@ -36,12 +36,12 @@
 
     document.getElementById('altaInquilino').addEventListener('click', (event) => {
         api.post('tenant',
+        { headers: { token: localStorage.getItem('token') } },
            {name:     document.getElementById('name').value,
            surname:   document.getElementById('surname').value,
            document:  document.getElementById('document').value,
            beginDate: document.getElementById('beginDate').value,
            property:  document.getElementById('propertyList').value },
-          //{ headers: { token: localStorage.getItem('token') } }
           )
           .then(function (response) {console.log("hola")
           })
@@ -49,19 +49,6 @@
             console.log(error)
           })
     })
-  
-    // function addTodoToList (todo) {
-    //   const todosUL = document.getElementById('todosUL')
-    //   const todoLI = document.createElement('li')
-    //   todoLI.innerHTML = `<input type="checkbox"> ${todo}`
-    //   todosUL.appendChild(todoLI)
-    // }
-  
-    // api.get('todos', { headers: { token: localStorage.getItem('token') } }).then(response => {
-    //   response.data.forEach(todo => {
-    //     addTodoToList(todo.task)
-    //   })
-    // })
   })(
 )
   

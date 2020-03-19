@@ -15,8 +15,8 @@
   function populateInformation() {
     const propertyList = document.getElementById('propertyList')
     propertyList.innerHTML = ''
-    api.get('property'
-      //, { headers: { token: localStorage.getItem('token') } }
+    api.get('property',
+    { headers: { token: localStorage.getItem('token') } },
     ).then(response => {
       response.data.forEach(property => {
         consultProperty(property)
@@ -35,14 +35,12 @@
           <div class="container border border-secondary rounded-pill">Garaje = ${property.garage}</div>
           <div class="container border border-secondary rounded-pill">Trastero = ${property.storageRoom}</div>
           <div class="container border border-secondary rounded-pill">Alquiler mensual = ${property.monthlyRental}</div>`
-    // <button type="button" class="btn btn-primary btn-lg" id="modificarInmueble">Modificar</button>
-    // <button type="button" class="btn btn-primary btn-lg" id="delete">Delete</button>`
     const buttonDelete = document.createElement('button')
     buttonDelete.innerText = "Delete"
     buttonDelete.setAttribute("type", "button")
     buttonDelete.setAttribute("class", "btn btn-primary btn-lg")
     buttonDelete.onclick = () => {
-      api.delete(`property/${property._id}`)
+      api.delete(`property/${property._id}`, { headers: { token: localStorage.getItem('token') } })
         .then(function (response) {
           populateInformation()
         })
@@ -65,12 +63,5 @@
   }
 
   populateInformation()
-
-  // api.get('todos', { headers: { token: localStorage.getItem('token') } }).then(response => {
-  //   response.data.forEach(todo => {
-  //     addTodoToList(todo.task)
-  //   })
-  // })
-
 })(
 )

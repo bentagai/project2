@@ -15,8 +15,8 @@
   function populateInformation() {
     const tenantList = document.getElementById('tenantList')
     tenantList.innerHTML = ''
-    api.get('tenant'
-      //, { headers: { token: localStorage.getItem('token') } }
+    api.get('tenant',
+    { headers: { token: localStorage.getItem('token') } },
     ).then(response => {
       response.data.forEach(tenant => {
         consultTenant(tenant)
@@ -38,7 +38,8 @@
     buttonDelete.setAttribute("type", "button")
     buttonDelete.setAttribute("class", "btn btn-primary btn-lg")
     buttonDelete.onclick = () => {
-      api.delete(`tenant/${tenant._id}`)
+      api.delete(`tenant/${tenant._id}`,
+      { headers: { token: localStorage.getItem('token') } })
         .then(function (response) {
           populateInformation()
         })
@@ -61,12 +62,5 @@
   }
 
   populateInformation()
-
-  // api.get('todos', { headers: { token: localStorage.getItem('token') } }).then(response => {
-  //   response.data.forEach(todo => {
-  //     addTodoToList(todo.task)
-  //   })
-  // })
-
 })(
 )

@@ -18,6 +18,7 @@
   
     document.getElementById('altaInmueble').addEventListener('click', (event) => {
         api.post('property',
+        { headers: { token: localStorage.getItem('token') } },
            {street: document.getElementById('street').value,
            letter: document.getElementById('letter').value,
            city: document.getElementById('city').value,
@@ -25,7 +26,6 @@
            garage: document.getElementById('garage').value,
            storageRoom: document.getElementById('storageRoom').value,
            monthlyRental: document.getElementById('monthlyRental').value },
-          //{ headers: { token: localStorage.getItem('token') } }
           )
           .then(function (response) {
             alert("Alta de Inmueble Realizada");
@@ -34,19 +34,6 @@
             console.log(error)
           })
     })
-  
-    // function addTodoToList (todo) {
-    //   const todosUL = document.getElementById('todosUL')
-    //   const todoLI = document.createElement('li')
-    //   todoLI.innerHTML = `<input type="checkbox"> ${todo}`
-    //   todosUL.appendChild(todoLI)
-    // }
-  
-    // api.get('todos', { headers: { token: localStorage.getItem('token') } }).then(response => {
-    //   response.data.forEach(todo => {
-    //     addTodoToList(todo.task)
-    //   })
-    // })
   })(
 )
   

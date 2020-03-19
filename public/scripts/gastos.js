@@ -16,8 +16,8 @@
       location.assign('index.html')
     })
   
-    api.get('property'
-    //, { headers: { token: localStorage.getItem('token') } }
+    api.get('property',
+    { headers: { token: localStorage.getItem('token') } }
     ).then(response => {
         response.data.forEach(property => {
             console.log(property)
@@ -28,7 +28,6 @@
     function consultProperty (property) {
         const propertyList = document.getElementById('propertyList')
         const propertyInd = document.createElement('option')
-        //propertyInd.innerHTML = `<option value="${property._id}">${property.street}  ID: ${property._id}</option>`
         propertyInd.setAttribute("value", property._id)
         propertyInd.innerText = `${property.street}  ID: ${property._id}`
         propertyList.appendChild(propertyInd)
@@ -36,12 +35,12 @@
 
     document.getElementById('gastos').addEventListener('click', (event) => {
         api.post('expenses',
+        { headers: { token: localStorage.getItem('token') } },
            {property: document.getElementById('propertyList').value,    
            type:      document.getElementById('type').value,
            reference: document.getElementById('reference').value,
            date:      document.getElementById('date').value,
            amount:    document.getElementById('amount').value },
-          //{ headers: { token: localStorage.getItem('token') } }
           )
           .then(function (response) {
             alert("Gasto Introducido");
@@ -51,17 +50,5 @@
           })
     })
   
-    // function addTodoToList (todo) {
-    //   const todosUL = document.getElementById('todosUL')
-    //   const todoLI = document.createElement('li')
-    //   todoLI.innerHTML = `<input type="checkbox"> ${todo}`
-    //   todosUL.appendChild(todoLI)
-    // }
-  
-    // api.get('todos', { headers: { token: localStorage.getItem('token') } }).then(response => {
-    //   response.data.forEach(todo => {
-    //     addTodoToList(todo.task)
-    //   })
-    // })
   })(
 )
