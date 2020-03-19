@@ -5,3 +5,7 @@ h1 {
 .menu {
   padding: 0px 0 12px 0;
 }
+
+.menu a {
+  width: 180px;
+}
