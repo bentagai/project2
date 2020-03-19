@@ -46,7 +46,17 @@
           console.log(error)
         })
     }
+    const buttonModify = document.createElement('button')
+    buttonModify.innerText = "Modify"
+    buttonModify.setAttribute("type", "button")
+    buttonModify.setAttribute("class", "btn btn-primary btn-lg")
+    buttonModify.onclick = () => {
+      localStorage.setItem('tenantID', tenant._id)
+      location.assign("./modificacionInquilino.html")
+    }
+
     tenantInd.appendChild(buttonDelete)
+    tenantInd.appendChild(buttonModify)
     tenantList.appendChild(tenantInd)
   }
 

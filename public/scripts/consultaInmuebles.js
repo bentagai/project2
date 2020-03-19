@@ -50,7 +50,17 @@
           console.log(error)
         })
     }
+    const buttonModify = document.createElement('button')
+    buttonModify.innerText = "Modify"
+    buttonModify.setAttribute("type", "button")
+    buttonModify.setAttribute("class", "btn btn-primary btn-lg")
+    buttonModify.onclick = () => {
+      localStorage.setItem('propertyID', property._id)
+      location.assign("./modificacionInmueble.html")
+    }
+
     propertyInd.appendChild(buttonDelete)
+    propertyInd.appendChild(buttonModify)
     propertyList.appendChild(propertyInd)
   }
 
