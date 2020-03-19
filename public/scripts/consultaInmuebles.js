@@ -28,13 +28,13 @@
     const propertyList = document.getElementById('propertyList')
     const propertyInd = document.createElement('div')
     propertyInd.innerHTML =
-      `   <div>Calle = ${property.street}</div>
-            <div>Letra = ${property.letter}</div>    
-            <div>Localidad = ${property.city}</div>
-            <div>Código Postal = ${property.postalCode}</div>
-            <div>Garaje = ${property.garage}</div>
-            <div>Trastero = ${property.storageRoom}</div>
-            <div>Alquiler mensual = ${property.monthlyRental}</div>`
+      `   <div class="container border border-secondary rounded-pill">Calle = ${property.street}</div>
+          <div class="container border border-secondary rounded-pill">Letra = ${property.letter}</div>    
+          <div class="container border border-secondary rounded-pill">Localidad = ${property.city}</div>
+          <div class="container border border-secondary rounded-pill">Código Postal = ${property.postalCode}</div>
+          <div class="container border border-secondary rounded-pill">Garaje = ${property.garage}</div>
+          <div class="container border border-secondary rounded-pill">Trastero = ${property.storageRoom}</div>
+          <div class="container border border-secondary rounded-pill">Alquiler mensual = ${property.monthlyRental}</div>`
     // <button type="button" class="btn btn-primary btn-lg" id="modificarInmueble">Modificar</button>
     // <button type="button" class="btn btn-primary btn-lg" id="delete">Delete</button>`
     const buttonDelete = document.createElement('button')
