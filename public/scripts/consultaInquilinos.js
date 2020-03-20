@@ -28,11 +28,11 @@
     const tenantList = document.getElementById('tenantList')
     const tenantInd = document.createElement('div')
     tenantInd.innerHTML =
-      `   <div>Nombre = ${tenant.name}</div>
-            <div>Apellidos = ${tenant.surname}</div>    
-            <div>Documento = ${tenant.document}</div>
-            <div>Fecha inicio = ${tenant.fechaInicio}</div>
-            <div>Vivienda = PENDIENTE</div>`
+      `   <div class="container border border-secondary rounded-pill">Nombre = ${tenant.name}</div>
+          <div class="container border border-secondary rounded-pill">Apellidos = ${tenant.surname}</div>    
+          <div class="container border border-secondary rounded-pill">Documento = ${tenant.document}</div>
+          <div class="container border border-secondary rounded-pill">Fecha inicio = ${tenant.fechaInicio}</div>
+          <div class="container border border-secondary rounded-pill">Vivienda = PENDIENTE</div>`
     const buttonDelete = document.createElement('button')
     buttonDelete.innerText = "Delete"
     buttonDelete.setAttribute("type", "button")

@@ -44,36 +44,37 @@
         <a href="./gastos.html" class="btn btn-outline-dark" role="button">Gastos</a>
       </nav>
     </div>
-
-    <form class="col-12">
-      <div class="form-group">
-        <label for="type">Select property</label>
-        <select class="form-control" id="propertyList">
-        </select>
+    <div class="container">
+      <form class="col-12">
+        <div class="form-group">
+          <label for="type">Select property</label>
+          <select class="form-control" id="propertyList">
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="type">Tipo de gasto</label>
+          <select class="form-control" id="type">
+            <option value="electricity">electricidad</option>
+            <option value="water">agua</option>
+            <option value="propertyTax">IBI</option>
+            <option value="homeownersAssn">comunidad de propietarios</option>
+            <option value="insurance">seguros</option>
+            <option value="other">otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="reference" placeholder="Número de factura o referencia">
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="date" placeholder="Fecha">
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="amount" placeholder="Importe">
+        </div>
+      </form>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" id="gastos">Aceptar</button>
       </div>
-      <div class="form-group">
-        <label for="type">Tipo de gasto</label>
-        <select class="form-control" id="type">
-          <option value="electricity">electricidad</option>
-          <option value="water">agua</option>
-          <option value="propertyTax">IBI</option>
-          <option value="homeownersAssn">comunidad de propietarios</option>
-          <option value="insurance">seguros</option>
-          <option value="other">otro</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <input class="form-control" id="reference" placeholder="Número de factura o referencia">
-      </div>
-      <div class="form-group">
-        <input class="form-control" id="date" placeholder="Fecha">
-      </div>
-      <div class="form-group">
-        <input class="form-control" id="amount" placeholder="Importe">
-      </div>
-    </form>
-    <div class="text-center">
-      <button type="button" class="btn btn-primary btn-lg" id="gastos">Aceptar</button>
     </div>
   </div>
 
